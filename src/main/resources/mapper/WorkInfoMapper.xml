@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tencent.wxcloudrun.dao.WorkInfoMapper">
+
+    <resultMap id="workInfoMapper" type="com.tencent.wxcloudrun.model.WorkInfo">
+        <id property="uId" column="u_id"/>
+        <result property="uDate" column="u_date" javaType="java.time.LocalDate"/>
+        <result property="uType" column="u_type"/>
+        <result property="uTime" column="u_time"/>
+        <result property="uOb" column="u_ob"/>
+        <result property="uAmount" column="u_amount"/>
+        <result property="uRemark" column="u_remark"/>
+    </resultMap>
+
+    <select id="getAllDates" resultType="java.time.LocalDate">
+        select u_date
+        from hh_work_info
+    </select>
+</mapper>
