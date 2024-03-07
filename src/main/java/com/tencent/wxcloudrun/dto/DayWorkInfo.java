@@ -16,6 +16,9 @@ public class DayWorkInfo implements Serializable {
     private Double wTotalAmount;
     private List<DayWorkInfSubitem> dwisList;
 
+    public DayWorkInfo() {
+
+    }
     public DayWorkInfo(LocalDate wDate) {
         this.wDate = wDate;
         int dayOfWeek= wDate.getDayOfWeek().getValue();
