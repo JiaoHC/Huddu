@@ -9,4 +9,6 @@ import java.util.List;
 public interface WorkInfoService {
 
     List<DayWorkInfo> getDlr();
+
+    Boolean saveDayWork(DayWorkInfo dayWorkInfo);
 }

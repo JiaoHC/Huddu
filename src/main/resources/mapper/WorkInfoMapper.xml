@@ -13,7 +13,17 @@
     </resultMap>
 
     <select id="getAllDates" resultType="java.time.LocalDate">
-        select u_date
-        from hh_work_info
+        select u_date from hh_work_info
     </select>
+
+    <delete id="removeByDate" parameterType="java.time.LocalDate">
+        delete from hh_work_info where u_date = #{localDate}
+    </delete>
+
+    <insert id="saverWorkInfos" parameterType="java.util.List">
+        insert into hh_work_info values 
+        <foreach collection="list" item="ite" index="index" separator=",">
+            (#{ite.uId},#{ite.uDate},#{ite.uType},#{ite.uTime},#{ite.uOb},#{ite.uAmount},#{ite.uRemark})
+        </foreach>
+    </insert>
 </mapper>

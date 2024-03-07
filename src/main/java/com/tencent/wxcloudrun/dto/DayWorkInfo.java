@@ -64,6 +64,7 @@ public class DayWorkInfo implements Serializable {
             case 6:
                 this.wWeek = "星期六";
                 this.wTotalAmount = 0.00;
+                this.dwisList = new ArrayList<DayWorkInfSubitem>() ;
                 break;
             case 7:
                 this.wWeek = "星期天";

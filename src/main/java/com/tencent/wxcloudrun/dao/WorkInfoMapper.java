@@ -1,5 +1,6 @@
 package com.tencent.wxcloudrun.dao;
 
+import com.tencent.wxcloudrun.model.WorkInfo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.time.LocalDate;
@@ -11,4 +12,7 @@ public interface WorkInfoMapper {
 
     List<LocalDate> getAllDates();
 
+    int removeByDate(LocalDate localDate);
+
+    int saverWorkInfos(List<WorkInfo> workInfos);
 }
